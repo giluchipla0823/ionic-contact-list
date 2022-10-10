@@ -1,0 +1,7 @@
+{
+  "name": "ionic-contact-list",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
