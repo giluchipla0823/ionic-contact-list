@@ -14,4 +14,5 @@ Mobile design
 
 Table design
 
-![Alt text](screenshots/tablet-design.PNG?raw=true "Title")
+
+![My Image](screenshots/tablet-design.PNG)
