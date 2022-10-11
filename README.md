@@ -13,6 +13,4 @@ Mobile design
 
 
 Table design
-
-
-![My Image](screenshots/tablet-design.PNG)
+![table-design](https://user-images.githubusercontent.com/22506256/195128266-577d3d33-abf8-4184-9c39-888046f70b0b.PNG)
