@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-menu-button slot="start" color="dark"></ion-menu-button>
+    <ion-title>Favorites</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+
+  <ion-list *ngIf="favorites.length > 0; else emptyResults">
+    <app-swipe-contact-item 
+      *ngFor="let favorite of favorites"
+      [contact]="favorite"
+      (delete)="deleteFavorite(favorite)"
+      ></app-swipe-contact-item>
+  </ion-list>
+
+</ion-content>
+
+<ng-template #emptyResults>
+  <div class="wrapper-empty-search">
+    <app-empty-results 
+      [iconName]="'heart-outline'" 
+      [message]="'No hay registros de favoritos'"></app-empty-results>
+  </div>
+</ng-template>

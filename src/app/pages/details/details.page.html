@@ -1,0 +1,89 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button color="medium" text=""></ion-back-button>
+    </ion-buttons>
+    <ion-title>Contact details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ng-container *ngIf="contact">
+
+    <div class="user-details-wrapper">
+      <div class="contact-avatar" [style.background]="contact.color">
+        {{ contact.avatarLetter }}
+      </div>  
+      <h2 class="contact-name">
+        {{ contact.name }}
+      </h2>
+      <div class="contact-username">
+        {{ contact.username }}
+      </div>
+
+      <ion-row class="buttons-action">
+        <ion-col size="4">
+          <ion-button class="action-btn" color="white" mode="ios" (click)="openEmail()">
+            <ion-icon class="btn-icon" slot="icon-only" name="mail"></ion-icon>
+          </ion-button>
+        </ion-col>
+        <ion-col size="4">
+          <ion-button class="action-btn" color="white" mode="ios" (click)="call()">
+            <ion-icon class="btn-icon" slot="icon-only" name="call"></ion-icon>
+          </ion-button>
+        </ion-col>
+        <ion-col size="4">
+          <ion-button class="action-btn" color="white" mode="ios" (click)="toggleFavorite()">
+            <ion-icon class="btn-icon" slot="icon-only" [name]="contact.isFavorite ? 'heart' : 'heart-outline'"></ion-icon>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </div>
+
+    <section class="content-section">
+      <h5 class="section-header">Contact Info</h5>
+      <ion-list lines="none">
+        <ion-item>
+          <ion-icon slot="start" name="call-outline"></ion-icon>
+          <label>{{ contact.phone }}</label>
+        </ion-item>
+        <ion-item>
+          <ion-icon slot="start" name="mail-outline"></ion-icon>
+          <label>{{ contact.email }}</label>
+        </ion-item>
+        <ion-item>
+          <ion-icon slot="start" name="earth-outline"></ion-icon>
+          <label>{{ contact.website }}</label>
+        </ion-item>
+      </ion-list>
+    </section>
+
+    <section class="content-section">
+      <h5 class="section-header">Address</h5>
+      <ion-list lines="none">
+        <ion-item>
+          <ion-icon slot="start" name="home-outline"></ion-icon>
+          <label class="label-address">
+            {{ contact.address.street }} {{ contact.address.suite }} <br /> 
+            <span>{{ contact.address.city }} | {{ contact.address.zipcode }}</span>
+          </label>
+        </ion-item>
+      </ion-list>
+    </section>
+
+    <section class="content-section">
+      <h5 class="section-header">Company</h5>
+      <ion-list lines="none">
+        <ion-item>
+          <ion-icon slot="start" name="business-outline"></ion-icon>
+          <label>
+            {{ contact.company.name }}
+          </label>
+        </ion-item>
+      </ion-list>
+    </section>
+  </ng-container>
+
+  
+
+</ion-content>

@@ -24,3 +24,23 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+
+.custom-popover {
+    --ion-backdrop-opacity: 0.6;
+    --max-width: auto;
+    --width: 94%;
+  
+    .popover-arrow {
+      display: none;
+    }
+  
+    .popover-content {
+      left: 10px;
+      width: calc(100% - 10px);
+    }
+}
+
+:root {
+  --card-item-height: 106px;
+}

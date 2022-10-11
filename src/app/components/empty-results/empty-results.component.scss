@@ -1,0 +1,19 @@
+:host {
+    margin-top: 10px;
+    text-align: center;
+    width: 80%;
+
+    ion-icon {
+      font-size: 4rem;
+      margin-bottom: 10px;
+    }
+
+    p.text-no-results {
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    p.text-suggestions {
+      font-size: .925rem;
+    }
+}

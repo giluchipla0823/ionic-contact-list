@@ -1,0 +1,126 @@
+:host {
+    --page-margin: 16px;
+}
+
+ion-content {
+    --background: var(--ion-background-color-step-50, #F2F2F2);
+}
+
+.content {
+    padding: 20px;
+}
+
+h2, h5 {
+    font-weight: 600;
+}
+
+ion-label {
+    font-size: larger !important;
+}
+
+.user-details-wrapper {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 16px;
+    margin-top: 16px;
+}
+
+
+.contact-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFF;
+    text-transform: capitalize;
+    font-weight: 600;
+    font-size: 3.25rem;
+}
+
+.contact-username {
+  font-size: .975rem;
+  font-style: italic;
+}
+
+.buttons-action {
+  margin-top: 20px;
+}
+
+.content-section {
+    background: #FFF;
+    padding: var(--page-margin);
+    margin: 20px 16px;
+    border-radius: 10px;
+
+    .section-header {
+      margin-top: 0px;
+      margin-bottom: 16px;
+    }
+
+    ion-list {
+      margin: 0px;
+      padding: 0px;
+
+      ion-item {
+        --min-height: initial;
+        --padding-start: 0px;
+        --padding-end: 0px;
+        --inner-padding-start: 0px;
+        --inner-padding-end: 0px;
+
+        &:not(:last-child) {
+          padding-bottom: calc(var(--page-margin) / 2);
+        }
+
+        ion-icon {
+          margin: 0px;
+          margin-right: calc(var(--page-margin) / 2);
+        }
+
+        ion-label {
+          font-size: 16px;
+          font-weight: 300;
+          width: 100%;
+
+          &.label-address {
+            span {
+              font-size: 0.9rem;
+            }
+          }
+        }
+      }
+    }
+
+    // .experience-list {
+    //   margin: 0px;
+    //   padding: 0px;
+
+    //   .experience-item {
+    //     --min-height: initial;
+    //     --padding-start: 0px;
+    //     --padding-end: 0px;
+    //     --inner-padding-start: 0px;
+    //     --inner-padding-end: 0px;
+
+    //     &:not(:last-child) {
+    //       padding-bottom: calc(var(--page-margin) / 2);
+    //     }
+
+    //     .experience-list-icon {
+    //       margin: 0px;
+    //       margin-right: calc(var(--page-margin) / 2);
+    //     }
+
+    //     .experience-label {
+    //       font-size: 16px;
+    //       font-weight: 300;
+    //       width: 100%;
+    //     }
+    //   }
+    // }
+}

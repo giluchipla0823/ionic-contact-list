@@ -1,0 +1,47 @@
+<ion-content 
+  scrollEvents="true" 
+  [appHideHeader]="search"
+  [appAnimatedFab]="fab">
+  <div slot="fixed" class="search-overlay ion-align-items-center" #search>
+    <ion-item lines="none">
+      <ion-menu-button slot="start" color="dark"></ion-menu-button>
+      <ion-label>
+        <ion-input placeholder="Search contact..." [formControl]="searchInput"></ion-input>
+      </ion-label>
+      <ion-avatar slot="end">
+        <img src="assets/images/luiggi.jpeg" />
+      </ion-avatar>
+    </ion-item>
+  </div>
+
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content refreshingSpinner="crescent"></ion-refresher-content>
+  </ion-refresher>
+
+  <ng-container *ngIf="firstContactListLoaded && (contacts | filter: searchInput.value : filterProperties) as contactList">
+    <ion-list *ngIf="contactList.length > 0; else emptyResults">
+      <ion-list-header>Contacts</ion-list-header>
+      <app-swipe-contact-item 
+        *ngFor="let contact of contactList"
+        [contact]="contact"
+        (delete)="removeContact(contact)"
+        (favorite)="favoriteContact(contact)"></app-swipe-contact-item>
+    </ion-list>
+
+    <ng-template #emptyResults>
+      <div class="wrapper-empty-search">
+        <app-empty-results 
+          [iconName]="emptyResultsIcon" 
+          [message]="emptyResultsMessage"
+          [additionalMessage]="emptyResultsAdditionalMessage"></app-empty-results>
+      </div>
+    </ng-template>
+  </ng-container>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button color="light" #fab (click)="addContact()">
+      <ion-icon name="add-outline" color="primary"></ion-icon>
+      <span>New</span>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

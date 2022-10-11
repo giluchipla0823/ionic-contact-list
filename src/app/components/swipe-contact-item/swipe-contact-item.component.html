@@ -1,0 +1,27 @@
+<div class="wrapper" #wrapper>
+  <div class="column">
+    <ion-icon name="trash-outline" color="light" class="ion-margin-start" #trash></ion-icon>
+  </div>
+  <div class="column" class="ion-text-right">
+    <ion-icon name="heart-outline" color="light" class="ion-margin-end" #favorite></ion-icon>
+  </div>
+</div>
+
+<ion-item class="contact">
+  <div slot="start" class="contact-avatar" [style.background]="contact.color">
+    {{ contact.avatarLetter }}
+  </div>
+  <ion-label color="dark" class="ion-text-capitalize ion-text-wrap">
+    <div class="contact-name text-ellipsis">{{ contact.name }}</div>
+    <div class="contact-details">
+        <div class="contact-username">{{ contact.username }}</div>
+        <div class="contact-phone">{{ contact.phone }}</div>
+        <div class="contact-email text-ellipsis">{{ contact.email }}</div>
+    </div>
+  </ion-label>
+  <ion-buttons slot="end">
+    <ion-button (click)="openDetails(contact.id)" color="dark">
+      <ion-icon size="large" name="information-circle-outline"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+</ion-item>
