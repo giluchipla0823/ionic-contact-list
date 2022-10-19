@@ -114,14 +114,11 @@ export class SwipeContactItemComponent implements OnInit, AfterViewInit {
       .easing('ease-in')
       .fromTo('transform', 'scale(1)', 'scale(1.7)');
 
-
-    if (!this.contact.isFavorite) {
-      this.favoriteAnimation = this.animationCtrl.create('favorite-animation')
+    this.favoriteAnimation = this.animationCtrl.create('favorite-animation')
       .addElement(this.favoriteIcon.nativeElement)
       .duration(300)
       .easing('ease-in')
       .fromTo('transform', 'scale(1)', 'scale(1.7)');
-    }
   }
 
   openDetails(id: number): void {
